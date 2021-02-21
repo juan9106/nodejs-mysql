@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-mysql-crud",
+  "version": "1.0.0",
+  "description": "simple nodejs mysql crud",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "juan luna",
+  "license": "ISC"
+}
