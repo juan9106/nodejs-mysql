@@ -7,8 +7,6 @@ const morgan = require('morgan');
 dotenv.config({ path: './.env' });
 
 const app = express();
-//const db = require('./config/db');
-//const { env } = require('process');
 
 //middleware
 app.use(morgan('dev'));
@@ -18,7 +16,6 @@ app.use(express.json());
 app.use(
     methodOverride(function (req, res) {
         if (req.body && typeof req.body === 'object' && '_method' in req.body) {
-            // look in urlencoded POST bodies and delete it
             let method = req.body._method
             delete req.body._method
             return method
