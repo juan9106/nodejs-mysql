@@ -30,6 +30,15 @@
                                             <button type="submit" class="btn btn-danger">DELETE</button>
                                         </form>
                                     </td>
+                                    <td>
+                                        <form action="/status/<%= data[i].id %>" method="POST">
+                                            <input type="hidden" name="_method" value="PUT" />
+                                            <button type="submit" class="btn <%= !data[i].status ? ' btn-warning'
+                                            : 'btn-success' %>">
+                                                <%= data[i].status ? "Done" : "Pending" %>
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 <% } %>
                                     <% } %>

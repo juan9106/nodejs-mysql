@@ -49,4 +49,14 @@ controller.update = (req, res) => {
     res.redirect('/');
 }
 
+controller.updateStatus = (req, res) => {
+    const { id } = req.params;
+    db.query("SELECT status from todos where id = ?;", [id], (err, result) => {
+        const { status } = result[0]
+        db.query("UPDATE todos set status = ? where id = ?", [!status, id], (err, result) => {
+        });
+    });
+    res.redirect('/');
+}
+
 module.exports = controller;
